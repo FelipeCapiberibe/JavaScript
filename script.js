@@ -56,5 +56,49 @@ console.log(lista[lista.length - 1]) // pegando o ultimo elemento da lista array
 lista.push('g'); // atribui um novo elemento a minha lista array.
 console.log(lista); 
 
-lista.pop(); // remover um elemento final da minha lista array.
+lista.pop(); // remove um elemento do final da minha lista array.
 console.log(lista);
+
+lista.shift(); // remove o primeiro elemento da lista array. 
+console.log(lista);
+
+lista.unshift('3'); // adicionar um elemento ao inicio da minha lista array.  
+console.log(lista);
+
+// destructuring do meu array 
+const [n1, n2] = lista 
+console.log(n1); 
+console.log(n2); 
+
+// Objetos 
+const produtos = { 
+    nome: 'Camisa',
+    valor: '15.99', 
+    estoque: true, 
+    tamanhos: ['P', 'M', 'G'],
+}
+console.log(produtos.nome); 
+console.log(produtos['nome']); // mesma coisa de cima 
+console.log(produtos.estoque);
+console.log(produtos); 
+
+// destructuring , consigo extrair variaveis por meio de objetos 
+const { valor, estoque} = produtos
+
+console.log(valor); 
+console.log(estoque); 
+
+// JSON - JavaScript Object Notation, json é utilizada para comunicação entre api's
+const dog = {
+    nome: 'Brutus', 
+    idade: 10 
+}
+const json = JSON.stringify(dog); // quando eu uso o stringfy o js converte o meu objeto para um json valido.  
+console.log(json)
+
+const obj = JSON.parse(json); // o método PARSE vai converter um objeto json em objeto js. 
+console.log(obj) 
+
+const jsonErrado = '{"nome": "Teste", "sobrenome": "Testando"}'
+const obj2 = JSON.parse(json)
+console.log(obj2); 
