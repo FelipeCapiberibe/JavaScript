@@ -102,3 +102,5 @@ console.log(obj)
 const jsonErrado = '{"nome": "Teste", "sobrenome": "Testando"}'
 const obj2 = JSON.parse(json)
 console.log(obj2); 
+
+console.log(teste); 
