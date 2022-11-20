@@ -95,10 +95,78 @@ class Product {
         this.name = name
         this.price = price 
     }
+    productDetails() {
+        return `O nome do produto é ${this.name} e o preço é R$${this.price}`
+    }
+ 
 }
-const socks = new Product ('Meia branca', 10.99)
+const socks = new Product ('Meia da Adidas', 10.99)
 console.log(socks.name)
 console.log(socks.price)
-const shirt = new Product ('Camisa preta', 49.99)
+const shirt = new Product ('Camisa da Nike', 49.99)
 console.log(shirt.name)
 console.log(shirt.price)
+
+console.log(shirt.productDetails())
+
+// herança, que é onde a gente estende uma  classe
+class SuperProduct extends Product {
+    constructor(name, price, size) {
+        super(name, price)
+        this.size = size
+    }
+    showAdjective(Adjective) {
+        return `O ${this.name} produto é muito ${Adjective}`
+    }
+// static, métodos estaticos que tambem fazem parte da orientação ao objeto, onde eu tenho um método que eu posso executar sem a criação de uma nova instancia.    
+    static sayHello() {
+        console.log('Hello')
+    }
+}
+const tenis = new SuperProduct('Tenis Puma', 399.99, '42')
+console.log(tenis.name)
+console.log(tenis.price)
+console.log(tenis.size)
+
+console.log(tenis.showAdjective('Bem feito e de otima qualidade!'))
+
+ 
+
+SuperProduct.sayHello()
+
+// DOM - Document Object Model
+// Seleção de elementos 
+const title = document.getElementById("title")
+console.log(title)
+
+// query Selector 
+const sameTitle = document.querySelector("#title")
+console.log(sameTitle)
+
+const texts = document.querySelectorAll('.text')
+console.log(texts)
+console.log(texts[1])
+
+texts.forEach((text) => {
+    console.log(text.textContent) // com o text content eu imprimo cada um dos textos dos meus parâgrafos
+})
+
+// Manipulação de elementos 
+title.textContent = "Mudei o texto"
+
+texts[0].innerHTML = '<span>Alteramos o HTML deste elemento</span>'
+
+texts[1].style.backgroundColor = 'red';
+
+texts[2].classList.add('my-class')
+
+texts[2].classList.remove('text')
+
+texts[3].remove()
+
+// Eventos. Dando vida para um botão
+const btn = document.querySelector("#btn")
+
+btn.addEventListener("click", function(){
+    texts[2].style.color = "blue"
+})
